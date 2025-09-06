@@ -1,0 +1,18 @@
+{
+  "name": "site-visit-backend",
+  "version": "1.0.0",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.2",
+    "firebase-admin": "^13.5.0",
+    "node-cron": "^4.2.1",
+    "nodemailer": "^7.0.6",
+    "twilio": "^5.9.0"
+  }
+}
