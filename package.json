@@ -1,18 +1,19 @@
 {
-  "name": "site-visit-backend",
+  "name": "sitevisit-backend",
   "version": "1.0.0",
-  "main": "server.js",
   "type": "module",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "^5.1.0",
+    "express": "^4.18.2",
     "cors": "^2.8.5",
-    "dotenv": "^17.2.2",
-    "firebase-admin": "^13.5.0",
-    "node-cron": "^4.2.1",
-    "nodemailer": "^7.0.6",
-    "twilio": "^5.9.0"
+    "dotenv": "^16.0.3",
+    "firebase-admin": "^11.10.0",
+    "nodemailer": "^6.9.3",
+    "twilio": "^4.15.0",
+    "exceljs": "^4.3.0",
+    "node-cron": "^3.0.2"
   }
 }
