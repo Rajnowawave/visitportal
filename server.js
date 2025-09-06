@@ -165,7 +165,7 @@ const sendDailyReport = async () => {
 
       const waMsg = await twilioClient.messages.create({
         from: process.env.TWILIO_WHATSAPP_FROM, // "whatsapp:+14155238886"
-        to: "whatsapp:+918290001814", // <-- your number
+        to: "whatsapp:+917792097977", // <-- your number
         body: textMessage,
       });
 
