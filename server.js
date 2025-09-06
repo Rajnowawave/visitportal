@@ -195,7 +195,7 @@ app.post("/send-report", async (req, res) => {
 // Cron job (daily 10:02 AM IST)
 // -------------------
 cron.schedule(
-  "02 10 * * *",
+  "40 12 * * *",
   () => {
     console.log("⏰ Running daily email + WhatsApp job...");
     sendDailyReport();
