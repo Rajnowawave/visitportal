@@ -109,16 +109,26 @@ const sendWhatsAppReport = async (phoneNumber, visits) => {
       let chunkNumber = 1;
       
       visits.forEach((v, i) => {
-        const visitText = `*#${i + 1}*\n👤 ${v.visitorName}\n📞 ${v.contactNumber}\n📅 ${v.visitDate}\n⏰ ${v.visitTime}\n🏢 ${v.channelPartner}\n🏠 ${v.propertyTypes}\n📝 ${v.remark}\n✅ ${v.status}\n\n`;
-        
-        if ((currentChunk + visitText).length > maxLength) {
-          chunks.push(currentChunk);
-          chunkNumber++;
-          currentChunk = `📊 *Visit Report (Part ${chunkNumber})*\n\n`;
-        }
-        
-        currentChunk += visitText;
-      });
+  const visitText = 
+    `#${i + 1}\n` +
+    `Visitor Name: ${v.visitorName}\n` +
+    `Contact Number: ${v.contactNumber}\n` +
+    `Visit Date: ${v.visitDate}\n` +
+    `Visit Time: ${v.visitTime}\n` +
+    `Channel Partner: ${v.channelPartner}\n` +
+    `Property Type: ${v.propertyTypes}\n` +
+    `Remarks: ${v.remark}\n` +
+    `Status: ${v.status}\n\n`;
+
+  if ((currentChunk + visitText).length > maxLength) {
+    chunks.push(currentChunk);
+    chunkNumber++;
+    currentChunk = `Visit Report (Part ${chunkNumber})\n\n`;
+  }
+
+  currentChunk += visitText;
+});
+
       
       currentChunk += `📈 *Summary*\nTotal: ${visits.length} | Booked: ${visits.filter(v => v.status === 'Booked').length}`;
       chunks.push(currentChunk);
@@ -398,7 +408,7 @@ app.post("/test-whatsapp", async (req, res) => {
 // Cron job (daily 10:02 AM IST) - SCHEDULED EMAILS GO TO YOUR ADDRESS
 // -------------------
 cron.schedule(
-  "00 17 * * *",
+  "55 16 * * *",
   () => {
     console.log("⏰ Running daily email + WhatsApp job...");
     sendDailyReport(); // This still goes to rajch54875@gmail.com
