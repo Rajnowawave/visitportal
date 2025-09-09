@@ -398,7 +398,7 @@ app.post("/test-whatsapp", async (req, res) => {
 // Cron job (daily 10:02 AM IST) - SCHEDULED EMAILS GO TO YOUR ADDRESS
 // -------------------
 cron.schedule(
-  "02 10 * * *",
+  "55 16 * * *",
   () => {
     console.log("⏰ Running daily email + WhatsApp job...");
     sendDailyReport(); // This still goes to rajch54875@gmail.com
