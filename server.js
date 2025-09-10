@@ -484,7 +484,7 @@ app.get("/health", (req, res) => {
 // Cron job (daily 4:55 PM IST - Both Email & WhatsApp: Last 24h, Date-sorted)
 // -------------------
 cron.schedule(
-  "48 14 * * *",
+  "53 14 * * *",
   () => {
     console.log("⏰ Running daily reports (Email + WhatsApp: Last 24h data, date-sorted)...");
     sendDailyReport();
